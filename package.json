@@ -13,6 +13,7 @@
     "axios": "^1.6.5",
     "bootstrap": "^5.3.2",
     "dotenv": "^16.3.1",
+    "prettier": "^3.2.4",
     "react": "^18.2.0",
     "react-bootstrap": "^2.9.2",
     "react-dom": "^18.2.0",
@@ -28,7 +29,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "proxy": "http://localhost:3000"
+    "proxy": "http://localhost:3000",
+    "lint:check": "prettier --check .",
+    "lint:fix": "prettier --write ."
   },
   "eslintConfig": {
     "extends": [

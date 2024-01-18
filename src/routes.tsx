@@ -10,19 +10,19 @@ import AdminInventory from "./Pages/AdminInventory";
 import AdminProfile from "./Pages/AdminProfile";
 
 const Router = () => (
-    <BrowserRouter>
-        <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signUp" element={<SingUp />} />
-            <Route path="/admin" element={<AdminHome />} />
-            <Route path="/admin/users" element={<AdminUsers />} />
-            <Route path="/admin/orders" element={<AdminOrders />} />
-            <Route path="/admin/registration" element={<AdminRegistration />} />
-            <Route path="/admin/inventory" element={<AdminInventory />} />
-            <Route path="/admin/profile" element={<AdminProfile />} />
-        </Routes>
-    </BrowserRouter>
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signUp" element={<SingUp />} />
+      <Route path="/admin" element={<AdminHome />} />
+      <Route path="/admin/users" element={<AdminUsers />} />
+      <Route path="/admin/orders" element={<AdminOrders />} />
+      <Route path="/admin/registration" element={<AdminRegistration />} />
+      <Route path="/admin/inventory" element={<AdminInventory />} />
+      <Route path="/admin/profile" element={<AdminProfile />} />
+    </Routes>
+  </BrowserRouter>
 );
 
 export default Router;

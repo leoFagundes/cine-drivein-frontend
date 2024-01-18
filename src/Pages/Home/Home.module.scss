@@ -1,0 +1,61 @@
+@import "../../Global.scss";
+
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  .formContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 336px;
+    height: fit-content;
+
+    .subtitleText {
+      font-size: 22px;
+      text-align: center;
+      margin: -5px 0;
+    }
+  }
+
+  .helpLink {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 16px;
+    font-size: 14px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .isClose {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 336px;
+    height: fit-content;
+
+    .infoSchedule {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      p {
+        margin-top: -5px;
+      }
+    }
+
+    .infoImage {
+      height: 150px;
+      width: 250px;
+      background-color: rgba(172, 172, 172, 0.315);
+      padding: 20px;
+      border-radius: 15px;
+    }
+  }
+}

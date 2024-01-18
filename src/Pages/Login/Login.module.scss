@@ -1,0 +1,32 @@
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  .formLogin {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 336px;
+    height: fit-content;
+
+    .subtitleText {
+      font-size: 22px;
+      text-align: center;
+      margin: -5px 0;
+    }
+
+    .signUpLink {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 14px;
+      margin-top: 12px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

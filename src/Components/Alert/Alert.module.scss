@@ -1,0 +1,38 @@
+@import "../../Global.scss";
+
+.alert {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: absolute;
+  padding: 5px 15px;
+  top: 10px;
+  border-radius: 15px;
+  text-align: center;
+  animation: alertAnimation 0.5s ease forwards;
+  z-index: 99;
+
+  .closeIco {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.success {
+  background-color: $success-color;
+}
+
+.danger {
+  background-color: $danger-color;
+}
+
+@keyframes alertAnimation {
+  from {
+    transform: translateY(-10px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}

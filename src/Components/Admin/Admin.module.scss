@@ -1,0 +1,52 @@
+@import "../../Global.scss";
+
+.adminContainer {
+  display: flex;
+  // align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  .bodyContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+
+    .profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      background-color: $secondary-backgroundColor;
+      border-radius: 10px;
+      top: 10px;
+      right: 10px;
+      padding: 5px 10px;
+      transition: 0.3s ease-in-out;
+      width: 50px;
+      height: 50px;
+
+      // .avatarProfileImage {
+      //   width: 50px;
+      //   height: 50px;
+      // }
+
+      .avatarDefaultProfileImage {
+        width: 30px;
+        height: 30px;
+      }
+
+      p {
+        font-size: 12px;
+        margin: 0;
+      }
+
+      &:hover {
+        cursor: pointer;
+        background-color: transparent;
+        outline: 1px solid $whitePattern-color;
+      }
+    }
+  }
+}

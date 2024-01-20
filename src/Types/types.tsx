@@ -13,21 +13,21 @@ export type User = {
 };
 
 export type Schedule = {
-  _id?: number;
+  _id?: string;
   isOpen: boolean;
   closingTime: string;
   openingTime: string;
 };
 
 export type AdditionalItem = {
-  _id?: number;
+  _id?: string;
   name: string;
   description: string;
   photo: string;
 };
 
 export type Item = {
-  _id?: number;
+  _id?: string;
   cod_item: string;
   name: string;
   type: string;
@@ -37,14 +37,14 @@ export type Item = {
   quantity: number;
   photo: string;
   isVisible: boolean;
-  additionals?: AdditionalItem[];
-  additionals_sauces?: AdditionalItem[];
-  additionals_drinks?: AdditionalItem[];
-  additionals_sweets?: AdditionalItem[];
+  additionals?: { additionalItem: string }[];
+  additionals_sauces?: { additionalItem: string }[];
+  additionals_drinks?: { additionalItem: string }[];
+  additionals_sweets?: { additionalItem: string }[];
 };
 
 export type Order = {
-  _id?: number;
+  _id?: string;
   username: string;
   phone: string;
   spot: number;

@@ -5,9 +5,10 @@ import style from "./AdminProfile.module.scss";
 import { avatarData } from "./avatarData";
 import UserRepositories from "../../Services/repositories/UserRepositories";
 import { HiUser } from "react-icons/hi2";
-import { FaArrowLeft, FaCheck } from "react-icons/fa";
+import { FaCheck } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+import ArrowBack from "../../Components/ArrowBack";
 
 export default function AdminProfile() {
   const { user, updateUser } = useAuth();
@@ -33,11 +34,7 @@ export default function AdminProfile() {
   return (
     <Admin sideBar={false}>
       <section className={style.profileContainer}>
-        <FaArrowLeft
-          size={20}
-          className={style.arrowBack}
-          onClick={() => navigate("/admin")}
-        />
+        <ArrowBack to="/admin" />
         <div className={style.infoTemplate}>
           <div className={style.userInfo}>
             <h2>{user.username}</h2>

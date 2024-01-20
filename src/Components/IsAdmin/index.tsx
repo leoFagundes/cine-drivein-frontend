@@ -8,7 +8,7 @@ export default function IsAdmin() {
   return (
     <div className={style.onlyAdmin}>
       <div>
-        <h2>Apenas Administradores podem ver essa página</h2>
+        <h2>Apenas Administradores podem acessar essa página</h2>
         <ButtonPattern
           mainText="Voltar"
           type="button"

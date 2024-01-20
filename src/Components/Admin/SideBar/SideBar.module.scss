@@ -13,8 +13,8 @@
   &::-webkit-scrollbar-thumb {
     background-color: $secondary-backgroundColor;
     border-radius: 1px;
-    border-top-left-radius: 100px;
-    border-bottom-left-radius: 100px;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
   }
 
   &::-webkit-scrollbar-track {
@@ -80,7 +80,7 @@
     display: flex;
     flex-direction: column;
     position: fixed;
-    transform: translate(20px, 60px);
+    transform: translate(20px, 70px);
     gap: 20px;
 
     .itemMobile {
@@ -135,6 +135,58 @@
       }
     }
 
+    .itemMobileClose {
+      display: flex;
+      align-items: center;
+      border-radius: 10px;
+      gap: 10px;
+      outline: transparent;
+      opacity: 1;
+      transition: 0.3s ease-in-out;
+      animation: fadeOut 0.3s ease-in-out forwards;
+
+      &:nth-child(6) {
+        animation-delay: 0.1s;
+      }
+
+      &:nth-child(5) {
+        animation-delay: 0.2s;
+      }
+
+      &:nth-child(4) {
+        animation-delay: 0.3s;
+      }
+
+      &:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+
+      &:nth-child(2) {
+        animation-delay: 0.5s;
+      }
+
+      &:nth-child(1) {
+        animation-delay: 0.6s;
+      }
+
+      & > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20px;
+        height: 20px;
+        color: black;
+        border-radius: 5px;
+        padding: 5px;
+      }
+
+      &:hover {
+        cursor: default;
+        background-color: transparent;
+        outline: 1px solid $whitePattern-color;
+      }
+    }
+
     .currentItemMobile {
       background-color: $secondary-backgroundColor;
 
@@ -164,10 +216,19 @@
   }
 }
 
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 // Mobile Hamburguer Menu---------------------------
 
 .wrapper {
-  position: absolute;
+  position: fixed;
   top: 15px;
   left: 35px;
   transform: translate(-50%, -20%);

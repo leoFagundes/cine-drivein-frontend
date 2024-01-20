@@ -1,1 +1,92 @@
 @import "../../Global.scss";
+
+.registrationContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px 0;
+  width: 100%;
+  gap: 30px;
+
+  .registrationButtonsContent {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 50px;
+
+    .registrationItem {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      width: 300px;
+      height: 250px;
+      background-color: $secondary-backgroundColor;
+      border-radius: 5px;
+      text-align: center;
+      padding: 5px;
+      transition: 0.3s ease-in-out;
+
+      .infoCard {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h2 {
+          font-size: 20px;
+          margin: 0;
+        }
+
+        p {
+          color: rgba(192, 192, 192, 0.815);
+          font-size: 12px;
+        }
+      }
+
+      .infoIco {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90px;
+        width: 90px;
+        border-radius: 50%;
+        background-color: $primary-backgroundColor;
+        transition: 0.3s ease-in-out;
+      }
+
+      .infoIcoOpen {
+        background-color: $primary-color;
+      }
+
+      &:hover {
+        cursor: pointer;
+        background-color: transparent;
+        outline: 1px solid $whitePattern-color;
+
+        .infoIco {
+          background-color: $secondary-backgroundColor;
+        }
+
+        .infoIcoOpen {
+          background-color: $primary-color;
+        }
+      }
+    }
+
+    .registrationItemOpen {
+      outline: 1px solid $whitePattern-color;
+    }
+  }
+
+  .registrationFormContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 80%;
+    background-color: $secondary-backgroundColor;
+    border-radius: 5px;
+  }
+}

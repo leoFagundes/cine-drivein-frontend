@@ -95,22 +95,12 @@
     &::-webkit-scrollbar-thumb {
       background-color: $secondary-backgroundColor;
       border-radius: 1px;
-      border-top-left-radius: 100px;
-      border-bottom-left-radius: 100px;
+      border-top-right-radius: 100px;
+      border-bottom-right-radius: 100px;
     }
 
     &::-webkit-scrollbar-track {
       background-color: $primary-backgroundColor;
-    }
-  }
-
-  .arrowBack {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-
-    &:hover {
-      cursor: pointer;
     }
   }
 }

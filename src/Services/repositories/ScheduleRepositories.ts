@@ -13,7 +13,7 @@ class ScheduleRepositories {
     }
   }
 
-  static async deleteSchedule(id: number) {
+  static async deleteSchedule(id: string) {
     try {
       const response = await api.delete(`/schedule/${id}`);
       console.log(response.data.message);
@@ -23,7 +23,7 @@ class ScheduleRepositories {
     }
   }
 
-  static async updateSchedule(id: number, bodyJson: {}) {
+  static async updateSchedule(id: string, bodyJson: {}) {
     try {
       const response = await api.put(`/schedule/${id}`, bodyJson);
       console.log(response.data.message);

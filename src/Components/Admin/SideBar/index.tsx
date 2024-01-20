@@ -11,7 +11,11 @@ import { IoMdCreate } from "react-icons/io";
 
 export default function SideBar() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [isNavBarOpen, setIsNavBarOpen] = useState(false);
+  const [isNavBarOpen, setIsNavBarOpen] = useState(() => {
+    const storedValue = localStorage.getItem('isNavBarOpen');
+    return storedValue ? JSON.parse(storedValue) : false;
+  });
+  const [menuHamburguerClicked, setMenuHamburguerClicked] = useState(false)
   const navigate = useNavigate();
   const location = useLocation();
   const { logout } = useAuth();
@@ -31,7 +35,10 @@ export default function SideBar() {
   }, []);
 
   const handleIconClick = () => {
-    setIsNavBarOpen(!isNavBarOpen);
+    const newValue = !isNavBarOpen;
+    setIsNavBarOpen(newValue);
+    localStorage.setItem('isNavBarOpen', JSON.stringify(newValue));
+    setMenuHamburguerClicked(true);
   };
 
   const navBarItems = [
@@ -125,9 +132,18 @@ export default function SideBar() {
               </div>
             ))}
           </div>
-        ) : (
-          ""
-        )}
+        ) : (menuHamburguerClicked ? (
+          <div className={style.navBarItemsMobile}>
+            {navBarItems.map(({ ico, name, navigateLink }, index) => (
+              <div
+                key={name}
+                className={`${style.itemMobileClose} ${location.pathname == navigateLink ? style.currentItemMobile : style.normalItemMobile}`}
+              >
+                <div>{ico}</div>
+              </div>
+            ))}
+          </div>
+        ) : '')}
       </section>
     );
   }

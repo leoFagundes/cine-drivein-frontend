@@ -1,0 +1,129 @@
+@import "../../../../Global.scss";
+
+.dropDownContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 20px;
+    font-size: 16px;
+  }
+
+  select {
+    margin-top: 8px;
+    width: 247px;
+    height: 200px;
+    padding: 6px 12px;
+    outline: none;
+    font-size: 16px;
+    border-radius: 8px;
+    background: $whitePattern-color;
+
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #9b9b9b;
+      border-radius: 1px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: #747474;
+      border-radius: 1px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: $whitePattern-color;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+
+    /* Adiciona as setas */
+    &::-webkit-scrollbar-button {
+      background-color: #cccccc;
+    }
+
+    &::-webkit-scrollbar-button:start:decrement {
+      height: 10px;
+      background-color: #cccccc;
+      border-top-right-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-button:end:increment {
+      height: 10px;
+      background-color: #cccccc;
+      border-bottom-right-radius: 10px;
+    }
+
+    option {
+      display: flex;
+      justify-content: center;
+      padding: 5px;
+      border-radius: 10px;
+
+      &:hover {
+        cursor: pointer;
+        background-color: $primary-color;
+        color: $whitePattern-color;
+      }
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .inputSearch {
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    margin: 5px 0;
+
+    &:focus {
+      outline: 1px solid $primary-color;
+    }
+  }
+}
+
+.choiceValues {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+
+  .values {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 247px;
+
+    & > div {
+      display: flex;
+      align-items: center;
+      background-color: $primary-color;
+      padding: 2px 4px;
+      border-radius: 5px;
+      gap: 5px;
+      height: 25px;
+
+      p {
+        margin: 0;
+        font-size: 12px;
+      }
+
+      svg {
+        &:hover {
+          cursor: pointer;
+          color: $secondary-backgroundColor;
+        }
+      }
+    }
+  }
+}

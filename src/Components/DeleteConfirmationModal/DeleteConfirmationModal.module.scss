@@ -11,15 +11,18 @@
   background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  z-index: 3;
 }
 
 .modalContent {
   background: $whitePattern-color;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.3);
   text-align: center;
+  animation: alertAnimation 0.5s ease forwards;
+  margin-top: 50px;
 
   p {
     text-align: center;
@@ -45,5 +48,14 @@
   button:last-child {
     background-color: $danger-color;
     color: white;
+  }
+}
+
+@keyframes alertAnimation {
+  from {
+    transform: translateY(-10px);
+  }
+  to {
+    transform: translateY(0);
   }
 }

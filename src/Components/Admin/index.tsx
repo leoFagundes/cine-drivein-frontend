@@ -33,7 +33,7 @@ export default function Admin({
 
   useEffect(() => {
     const checkAuthentication = async () => {
-      // Simula uma espera de 5 segundos (5000 milissegundos)
+
       if (from === "welcome") {
         setShowAlertFromLogin(true);
         navigate("/admin", { replace: true });

@@ -55,14 +55,6 @@ export default function AdminUsers() {
 
   return (
     <Admin isAdmin>
-      {showDeleteAlert && (
-        <Alert
-          mensagem="Usuário excluído com sucesso."
-          tempoExibicao={3000}
-          onClose={closeAlert}
-          type="success"
-        />
-      )}
       <h2>Usuários</h2>
       <section className={style.usersContainer}>
         {users.map(
@@ -103,6 +95,14 @@ export default function AdminUsers() {
           ),
         )}
       </section>
+      {showDeleteAlert && (
+        <Alert
+          mensagem="Usuário excluído com sucesso."
+          tempoExibicao={3000}
+          onClose={closeAlert}
+          type="success"
+        />
+      )}
       {showDeleteConfirmation && (
         <DeleteConfirmationModal
           onCancel={handleCancelDelete}

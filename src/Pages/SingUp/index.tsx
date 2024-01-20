@@ -50,38 +50,31 @@ export default function SingUp() {
     fetchUsers();
   }, []);
 
-  useEffect(() => {
-    setIsValid({
-      ...isValid,
-      username: username !== "" ? true : null,
-    });
-  }, [username]);
-
-  useEffect(() => {
-    setIsValid({
-      ...isValid,
-      password: password !== "" ? true : null,
-    });
-  }, [password]);
-
-  useEffect(() => {
-    setIsValid({
-      ...isValid,
-      email: email !== "" ? true : null,
-    });
-  }, [email]);
-
-  useEffect(() => {
-    if (isAdmin) {
-      setIsValid({
-        ...isValid,
-        adminToken: adminToken !== "" ? true : null,
-      });
+  const handleInputChange = (field: string, value: string | number | boolean) => {
+    switch (field) {
+      case "username":
+        setUsername(value as string);
+        setIsValid((prevIsValid) => ({ ...prevIsValid, [field]: value !== "" ? true : null }));
+        break;
+      case "email":
+        setEmail(value as string);
+        setIsValid((prevIsValid) => ({ ...prevIsValid, [field]: value !== "" ? true : null }));
+        break;
+      case "password":
+        setPassword(value as string);
+        setIsValid((prevIsValid) => ({ ...prevIsValid, [field]: value !== "" ? true : null }));
+        break;
+      case "adminToken":
+        setAdminToken(value as string);
+        setIsValid((prevIsValid) => ({ ...prevIsValid, [field]: value !== "" ? true : null }));
+        break;
+      default:
+        break;
     }
-  }, [adminToken]);
+  };
 
   const isEmailValid = (email: string) => {
-    // Utilize a mesma expressão regular usada no backend
+    // mesma expressão regular usada no backend
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return emailRegex.test(email);
   };
@@ -148,11 +141,7 @@ export default function SingUp() {
         <p className={style.subtitleText}>Cadastrar Usuário</p>
         <InputPattern
           value={username}
-          onChange={(e: ChangeEvent<HTMLInputElement>) => {
-            if (e.target) {
-              setUsername(e.target.value);
-            }
-          }}
+          onChange={(e: ChangeEvent<HTMLInputElement>) => handleInputChange("username", e.target.value)}
           textLabel="Username"
           placeholder="Seu nome"
           type="text"
@@ -160,11 +149,7 @@ export default function SingUp() {
         />
         <InputPattern
           value={email}
-          onChange={(e: ChangeEvent<HTMLInputElement>) => {
-            if (e.target) {
-              setEmail(e.target.value);
-            }
-          }}
+          onChange={(e: ChangeEvent<HTMLInputElement>) => handleInputChange("email", e.target.value)}
           textLabel="E-mail"
           placeholder="Seu e-mail"
           type="text"
@@ -172,11 +157,7 @@ export default function SingUp() {
         />
         <InputPattern
           value={password}
-          onChange={(e: ChangeEvent<HTMLInputElement>) => {
-            if (e.target) {
-              setPassword(e.target.value);
-            }
-          }}
+          onChange={(e: ChangeEvent<HTMLInputElement>) => handleInputChange("password", e.target.value)}
           textLabel="Senha"
           placeholder="Sua senha"
           type="password"
@@ -185,11 +166,7 @@ export default function SingUp() {
         {isAdmin ? (
           <InputPattern
             value={adminToken}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => {
-              if (e.target) {
-                setAdminToken(e.target.value);
-              }
-            }}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => handleInputChange("adminToken", e.target.value)}
             textLabel="Admin Token"
             placeholder="Token de Admninistrador"
             type="password"
@@ -210,7 +187,7 @@ export default function SingUp() {
           isCheck
         />
         <ButtonPattern
-          mainText="Enviar solicitação"
+          mainText="Criar Conta"
           type="button"
           onClick={() => handleSubmit()}
         />

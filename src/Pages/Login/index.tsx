@@ -45,19 +45,20 @@ export default function Login() {
     }
   }, []);
 
-  useEffect(() => {
-    setIsValid({
-      ...isValid,
-      username: username !== "" ? true : null,
-    });
-  }, [username]);
-
-  useEffect(() => {
-    setIsValid({
-      ...isValid,
-      password: password !== "" ? true : null,
-    });
-  }, [password]);
+  const handleInputChange = (field: string, value: string | number | boolean) => {
+    switch (field) {
+      case "username":
+        setUsername(value as string);
+        setIsValid((prevIsValid) => ({ ...prevIsValid, [field]: value !== "" ? true : null }));
+        break;
+      case "password":
+        setPassword(value as string);
+        setIsValid((prevIsValid) => ({ ...prevIsValid, [field]: value !== "" ? true : null }));
+        break;
+      default:
+        break;
+    }
+  };
 
   const handleSubmit = async () => {
     const providerReq = await UserRepositories.loginUser({
@@ -107,11 +108,7 @@ export default function Login() {
         <p className={style.subtitleText}>Fazer Login</p>
         <InputPattern
           value={username}
-          onChange={(e: ChangeEvent<HTMLInputElement>) => {
-            if (e.target) {
-              setUsername(e.target.value);
-            }
-          }}
+          onChange={(e: ChangeEvent<HTMLInputElement>) => handleInputChange("username", e.target.value)}
           textLabel="Username"
           placeholder="Seu nome"
           type="text"
@@ -119,11 +116,7 @@ export default function Login() {
         />
         <InputPattern
           value={password}
-          onChange={(e: ChangeEvent<HTMLInputElement>) => {
-            if (e.target) {
-              setPassword(e.target.value);
-            }
-          }}
+          onChange={(e: ChangeEvent<HTMLInputElement>) => handleInputChange("password", e.target.value)}
           textLabel="Senha"
           placeholder="Sua senha"
           type="password"

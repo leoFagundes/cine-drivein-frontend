@@ -75,14 +75,19 @@ export default function Admin({
               className={style.profile}
             >
               {user.profileImage !== "" ? (
-                <img
-                  className={style.avatarProfileImage}
-                  src={`https://api.dicebear.com/7.x/adventurer/svg?seed=${user.profileImage}`}
-                  alt="avatar"
-                />
+                <>
+                  <img
+                    className={style.avatarProfileImage}
+                    src={`https://api.dicebear.com/7.x/adventurer/svg?seed=${user.profileImage}`}
+                    alt="avatar"
+                  />
+                </>
               ) : (
-                <HiUser className={style.avatarDefaultProfileImage} size={30} />
+                <>
+                  <HiUser className={style.avatarDefaultProfileImage} size={30} />
+                </>
               )}
+              <h2>Perfil</h2>
             </div>
           </section>
         </>

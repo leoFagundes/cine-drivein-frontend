@@ -2,8 +2,116 @@
 
 .inventoryContainer {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   flex-wrap: wrap;
   padding: 10px 0;
-  width: 100%;
+  width: 90%;
+  background-color: $secondary-backgroundColor;
+  border-radius: 5px;
+
+  .itemsContent {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 5px;
+    gap: 20px;
+
+    .item {
+      display: flex;
+      background-color: $whitePattern-color;
+      padding: 10px;
+      color: black;
+      position: relative;
+      width: 450px;
+      height: 150px;
+      border-radius: 5px;
+
+      .itemImage {
+        width: 180px;
+        height: 150px;
+      }
+
+      .itemInfo {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        flex: 1;
+        padding: 10px;
+
+        h2 {
+          font-size: 20px;
+          color: black;
+          margin: 0;
+        }
+
+        p {
+          color: black;
+          margin: 0;
+        }
+      }
+
+      .itemManage {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        right: 5px;
+        gap: 8px;
+
+        .eyeIco {
+          margin-right: 5px;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+
+        .updateIco {
+          transition: 0.2s ease-in-out;
+          &:hover {
+            cursor: pointer;
+            color: $primary-color;
+          }
+        }
+
+        .deleteIco {
+          transition: 0.2s ease-in-out;
+          &:hover {
+            cursor: pointer;
+            color: $danger-color;
+          }
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+        width: 280px;
+        min-height: 350px;
+        text-align: center;
+
+        .itemInfo {
+          flex: none;
+          gap: 10px;
+        }
+
+        .itemManage {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          right: 5px;
+          gap: 8px;
+
+          .eyeIco {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+
+    .invisibleItem {
+      opacity: 0.7;
+    }
+  }
 }

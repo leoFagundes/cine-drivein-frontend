@@ -14,7 +14,6 @@ type isValid = {
   type: boolean | null;
   description: boolean | null;
   value: boolean | null;
-  observation: boolean | null;
   quantity: boolean | null;
   photo: boolean | null;
   additionals: boolean | null;
@@ -35,7 +34,6 @@ export default function ItemForm({ setShowSuccessAlert, setRegisterAdditionalIte
   const [type, setType] = useState('');
   const [description, setDescription] = useState('');
   const [value, setValue] = useState('');
-  const [observation, setObservation] = useState('');
   const [quantity, setQuantity] = useState('');
   const [photo, setPhoto] = useState('');
 
@@ -57,7 +55,7 @@ export default function ItemForm({ setShowSuccessAlert, setRegisterAdditionalIte
     type: true,
     description: true,
     value: true,
-    observation: true,
+
     quantity: true,
     photo: true,
     // isVisible: boolean,
@@ -92,10 +90,6 @@ export default function ItemForm({ setShowSuccessAlert, setRegisterAdditionalIte
         break;
       case "value":
         setValue(value as string);
-        setIsValid((prevIsValid) => ({ ...prevIsValid, [field]: value !== "" ? true : null }));
-        break;
-      case "observation":
-        setObservation(value as string);
         setIsValid((prevIsValid) => ({ ...prevIsValid, [field]: value !== "" ? true : null }));
         break;
       case "quantity":
@@ -141,7 +135,6 @@ export default function ItemForm({ setShowSuccessAlert, setRegisterAdditionalIte
       type: type.trim() !== "" ? true : false,
       description: description.trim() !== "" ? true : false,
       value: value.trim() !== "" ? true : false,
-      observation: observation.trim() !== "" ? true : false,
       quantity: quantity.trim() !== "" ? true : false,
       photo: photo.trim() !== "" ? true : false,
     }));
@@ -153,7 +146,6 @@ export default function ItemForm({ setShowSuccessAlert, setRegisterAdditionalIte
       type.trim() === "" ||
       description.trim() === "" ||
       value.trim() === "" ||
-      observation.trim() === "" ||
       quantity.trim() === "" ||
       photo.trim() === ""
     ) {
@@ -185,7 +177,6 @@ export default function ItemForm({ setShowSuccessAlert, setRegisterAdditionalIte
       type,
       description,
       value: parseFloat(value),
-      observation,
       quantity: parseInt(quantity, 10),
       photo,
       isVisible: true,
@@ -261,14 +252,6 @@ export default function ItemForm({ setShowSuccessAlert, setRegisterAdditionalIte
           />
         </div>
         <div className={style.groupForm}>
-          <InputPattern
-            value={observation}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => handleInputChange("observation", e.target.value)}
-            textLabel="Observação"
-            placeholder="Ex: Sem cebola"
-            type="text"
-            isValid={isValid.observation}
-          />
           <InputPattern
             value={quantity}
             onChange={(e: ChangeEvent<HTMLInputElement>) => handleInputChange("quantity", e.target.value)}

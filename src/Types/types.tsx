@@ -33,7 +33,6 @@ export type Item = {
   type: string;
   description: string;
   value: number;
-  observation: string;
   quantity: number;
   photo: string;
   isVisible: boolean;

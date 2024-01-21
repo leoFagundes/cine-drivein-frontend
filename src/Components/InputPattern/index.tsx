@@ -3,8 +3,7 @@ import style from "./InputPattern.module.scss";
 import InputMask from "react-input-mask";
 import { LuBadgeInfo } from "react-icons/lu";
 import { IoClose } from "react-icons/io5";
-import { FaRegEye } from "react-icons/fa";
-import { FaRegEyeSlash } from "react-icons/fa";
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 
 type Props = {
   textLabel: string;

@@ -5,6 +5,7 @@
   width: 230px;
   padding: 0 10px;
   overflow-y: scroll;
+  z-index: 99;
 
   &::-webkit-scrollbar {
     width: 5px;
@@ -76,6 +77,8 @@
 // Mobile
 
 .sideBarContainerMobile {
+  z-index: 99;
+
   .navBarItemsMobile {
     display: flex;
     flex-direction: column;

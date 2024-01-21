@@ -121,7 +121,9 @@
       svg {
         &:hover {
           cursor: pointer;
-          color: #ffcccc;
+          color: $danger-color;
+          background-color: $whitePattern-color;
+          border-radius: 50%;
         }
       }
     }
